@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karl Marx - Resumo para Aula</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            color: #8B0000;
+            text-align: center;
+            border-bottom: 3px solid #8B0000;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #8B0000;
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-left: 5px solid #8B0000;
+            margin-top: 30px;
+        }
+        
+        h3 {
+            color: #555;
+            margin-top: 25px;
+        }
+        
+        .table-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th {
+            background-color: #8B0000;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+        
+        tr:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .conceito {
+            font-weight: bold;
+            color: #8B0000;
+            width: 20%;
+        }
+        
+        .definicao {
+            width: 40%;
+        }
+        
+        .exemplo {
+            width: 40%;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .dica-aula {
+            background-color: #e8f4f8;
+            border-left: 5px solid #4A90A4;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>📚 Introdução ao Pensamento de Karl Marx</h1>
+    
+    <div class="table-container">
+        <h2>1. O Básico: Quem Foi e Qual a Questão Central?</h2>
+        <table>
+            <tr>
+                <th>Conceito</th>
+                <th>Descrição</th>
+                <th>Contexto</th>
+            </tr>
+            <tr>
+                <td class="conceito">Quem foi</td>
+                <td class="definicao">Karl Marx (1818-1883) - filósofo, economista político e revolucionário alemão</td>
+                <td class="exemplo">Crítico radical da sociedade capitalista moderna</td>
+            </tr>
+            <tr>
+                <td class="conceito">Parceiro</td>
+                <td class="definicao">Friedrich Engels</td>
+                <td class="exemplo">Coautor de obras fundamentais e colaborador intelectual</td>
+            </tr>
+            <tr>
+                <td class="conceito">Obra Principal</td>
+                <td class="definicao">"O Capital" (1867)</td>
+                <td class="exemplo">Para iniciantes: "O Manifesto Comunista" (1848)</td>
+            </tr>
+            <tr>
+                <td class="conceito">Questão Central</td>
+                <td class="definicao">Como a organização econômica molda todas as outras esferas da vida social?</td>
+                <td class="exemplo">A luta de classes como motor da história</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <h2>2. Os Conceitos Fundamentais</h2>
+        <table>
+            <tr>
+                <th>Conceito</th>
+                <th>Definição</th>
+                <th>Analogia/Exemplo</th>
+            </tr>
+            <tr>
+                <td class="conceito">Materialismo Histórico</td>
+                <td class="definicao">As mudanças sociais são movidas por conflitos materiais e econômicos</td>
+                <td class="exemplo">A luta por quem controla fábricas e recursos move a história, não apenas ideias</td>
+            </tr>
+            <tr>
+                <td class="conceito">Infraestrutura e Superestrutura</td>
+                <td class="definicao">Base econômica vs. instituições derivadas (Estado, leis, cultura)</td>
+                <td class="exemplo">Infraestrutura = alicerce do prédio; Superestrutura = andares de cima</td>
+            </tr>
+            <tr>
+                <td class="conceito">Classes Sociais</td>
+                <td class="definicao">Grupos definidos pela relação com os meios de produção</td>
+                <td class="exemplo">Quem é dono vs. quem precisa vender sua força de trabalho</td>
+            </tr>
+            <tr>
+                <td class="conceito">Burguesia x Proletariado</td>
+                <td class="definicao">Detentores dos meios de produção vs. trabalhadores assalariados</td>
+                <td class="exemplo">Burguesia: donos da empresa; Proletariado: funcionários</td>
+            </tr>
+            <tr>
+                <td class="conceito">Alienação</td>
+                <td class="definicao">Trabalhador fica estranho a si mesmo e ao produto do seu trabalho</td>
+                <td class="exemplo">Operário que repete mesma tarefa não se identifica com produto final</td>
+            </tr>
+            <tr>
+                <td class="conceito">Mais-Valia</td>
+                <td class="definicao">Valor não pago do trabalho - fonte do lucro capitalista</td>
+                <td class="exemplo">Trabalhador produz R$100 mas recebe R$20 = R$80 é mais-valia</td>
+            </tr>
+            <tr>
+                <td class="conceito">Ideologia</td>
+                <td class="definicao">Ideias que mascaram a realidade e mantêm a dominação</td>
+                <td class="exemplo">"Qualquer um pode ficar rico" mascara estruturas de privilégio</td>
+            </tr>
+            <tr>
+                <td class="conceito">Consciência de Classe</td>
+                <td class="definicao">Compreensão da exploração e poder coletivo do proletariado</td>
+                <td class="exemplo">Deixar de se ver como indivíduo isolado para ver como classe explorada</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <h2>3. Crítica ao Capitalismo e Perspectiva de Mudança</h2>
+        <table>
+            <tr>
+                <th>Estágio</th>
+                <th>Descrição</th>
+                <th>Consequência</th>
+            </tr>
+            <tr>
+                <td class="conceito">Crítica</td>
+                <td class="definicao">Sistema intrinsecamente explorador, contraditório e instável</td>
+                <td class="exemplo">Gera riqueza e miséria simultaneamente; alienação impede realização humana</td>
+            </tr>
+            <tr>
+                <td class="conceito">Revolução</td>
+                <td class="definicao">Queda do capitalismo através da ação consciente do proletariado</td>
+                <td class="exemplo">Desenvolvimento da consciência de classe leva à organização revolucionária</td>
+            </tr>
+            <tr>
+                <td class="conceito">Objetivo Final</td>
+                <td class="definicao">Sociedade comunista sem classes, Estado ou propriedade privada dos meios de produção</td>
+                <td class="exemplo">"De cada qual segundo sua capacidade, a cada qual segundo suas necessidades"</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="dica-aula">
+        <h3>💡 Dicas para a Aula (Da Experiência de Colega)</h3>
+        <p><strong>Contextualize:</strong> Mostre imagens da Revolução Industrial para tornar a crítica tangível.</p>
+        <p><strong>Exemplos Atuais:</strong> Use a "gig economy" (Uber, iFood) para discutir alienação e mais-valia hoje.</p>
+        <p><strong>Debate:</strong> "O trabalho na sociedade atual é realizador ou apenas meio de sobrevivência?"</p>
+        <p><strong>Cuidado:</strong> Avise que Marx é frequentemente mal interpretado e sua teoria é complexa.</p>
+        <p><strong>Conexões:</strong> Lance a semente para Weber: "Enquanto Marx focava no econômico, Weber trará o papel das ideias..."</p>
+    </div>
+
+    <div class="footer">
+        <p>Material didático para a disciplina de Introdução à Sociologia - Turma de Calouros</p>
+        <p>✏️ Adaptável para projeção em aula ou distribuição digital</p>
+    </div>
+</body>
+</html>
