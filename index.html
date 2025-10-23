@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Karl Marx - Introdução à Sociologia</title>
+    <title>Karl Marx - Material Completo + Quiz</title>
     <style>
         * {
             margin: 0;
@@ -21,7 +21,7 @@
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             background: white;
             border-radius: 15px;
@@ -48,68 +48,92 @@
             font-weight: 300;
         }
         
-        .quiz-container {
+        .content-section {
             padding: 2rem;
-        }
-        
-        .progress-bar {
-            background: #f0f0f0;
-            height: 8px;
-            border-radius: 4px;
-            margin-bottom: 2rem;
-            overflow: hidden;
-        }
-        
-        .progress {
-            background: linear-gradient(135deg, #8B0000 0%, #A52A2A 100%);
-            height: 100%;
-            width: 0%;
-            transition: width 0.5s ease;
-        }
-        
-        .question-card {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            border-left: 5px solid #8B0000;
-            display: none;
-        }
-        
-        .question-card.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         
         h2 {
             color: #8B0000;
             margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            border-left: 5px solid #8B0000;
+            padding-left: 15px;
         }
         
         h3 {
             color: #555;
             margin: 1.5rem 0 1rem 0;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: #8B0000;
+            color: white;
+            padding: 15px 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        td {
+            padding: 12px 20px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #f8f8f8;
+        }
+        
+        tr:hover {
+            background: #f0f0f0;
+            transform: translateY(-1px);
+            transition: all 0.2s ease;
+        }
+        
+        .conceito {
+            font-weight: bold;
+            color: #8B0000;
+            width: 25%;
+        }
+        
+        .quiz-section {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 5px solid #8B0000;
+        }
+        
+        .question-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         .options {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-            margin: 1.5rem 0;
+            gap: 0.8rem;
+            margin: 1rem 0;
         }
         
         .option {
             background: white;
             border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            padding: 1rem 1.2rem;
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 1rem;
@@ -118,7 +142,6 @@
         .option:hover {
             border-color: #8B0000;
             background: #fff5f5;
-            transform: translateY(-2px);
         }
         
         .option.selected {
@@ -126,15 +149,6 @@
             background: #ffeaea;
             color: #8B0000;
             font-weight: bold;
-        }
-        
-        .navigation {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #eee;
         }
         
         .btn {
@@ -149,6 +163,7 @@
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            margin-top: 1rem;
         }
         
         .btn:hover {
@@ -163,44 +178,17 @@
             box-shadow: none;
         }
         
-        .btn-secondary {
-            background: #6c757d;
-        }
-        
-        .btn-secondary:hover {
-            background: #5a6268;
-            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
-        }
-        
-        .results-container {
-            display: none;
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        .score {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #8B0000;
-            margin: 1rem 0;
-        }
-        
-        .feedback {
-            background: #e8f4f8;
+        .dica {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4e8f0 100%);
             border-left: 5px solid #4A90A4;
             padding: 1.5rem;
-            margin: 1.5rem 0;
+            margin: 2rem 0;
             border-radius: 8px;
-            text-align: left;
         }
         
-        .question-number {
-            color: #8B0000;
-            font-weight: bold;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .dica h3 {
+            color: #4A90A4;
+            margin-top: 0;
         }
         
         footer {
@@ -209,6 +197,63 @@
             text-align: center;
             padding: 2rem;
             margin-top: 2rem;
+        }
+        
+        .aviso {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+            color: #856404;
+        }
+        
+        /* Modal para explicações */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background: white;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 800px;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #8B0000;
+            background: none;
+            border: none;
+        }
+        
+        .score-display {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            color: #8B0000;
+            font-weight: bold;
         }
         
         @media (max-width: 768px) {
@@ -220,16 +265,23 @@
                 font-size: 2rem;
             }
             
-            .quiz-container {
+            .content-section {
                 padding: 1rem;
             }
             
-            .question-card {
+            th, td {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .modal-content {
+                margin: 1rem;
                 padding: 1.5rem;
-            }
-            
-            .option {
-                padding: 1rem;
             }
         }
     </style>
@@ -237,121 +289,214 @@
 <body>
     <div class="container">
         <header>
-            <h1>🧠 QUIZ KARL MARX</h1>
-            <p class="subtitle">Teste seu conhecimento sobre a teoria marxista</p>
-            <p class="subtitle">Introdução à Sociologia</p>
+            <h1>📚 KARL MARX</h1>
+            <p class="subtitle">Introdução à Sociologia - Teoria Marxista Completa</p>
+            <p class="subtitle">Material Didático + Quiz Interativo</p>
         </header>
 
-        <div class="quiz-container">
-            <div class="progress-bar">
-                <div class="progress" id="progress"></div>
+        <div class="content-section">
+            <div class="aviso">
+                <strong>🎯 OBJETIVO DA AULA:</strong> Compreender os conceitos fundamentais de Karl Marx e testar seu conhecimento com o quiz interativo.
             </div>
 
-            <!-- Questão 1 -->
-            <div class="question-card active" id="question1">
-                <div class="question-number">Questão 1 de 5</div>
-                <h2>Qual é o conceito marxista que descreve o valor não pago do trabalho do trabalhador, que é a fonte do lucro capitalista?</h2>
-                <div class="options">
-                    <div class="option" onclick="selectOption(this, 'a')">A) Alienação</div>
-                    <div class="option" onclick="selectOption(this, 'b')">B) Mais-Valia</div>
-                    <div class="option" onclick="selectOption(this, 'c')">C) Ideologia</div>
-                    <div class="option" onclick="selectOption(this, 'd')">D) Materialismo Histórico</div>
-                </div>
-                <div class="navigation">
-                    <div></div> <!-- Espaço vazio para alinhamento -->
-                    <button class="btn" onclick="nextQuestion(1)">Próxima →</button>
-                </div>
+            <!-- SEÇÃO 1: TABELA RESUMO -->
+            <h2>1. QUEM FOI KARL MARX?</h2>
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Descrição</th>
+                </tr>
+                <tr>
+                    <td class="conceito">Período</td>
+                    <td>1818-1883</td>
+                </tr>
+                <tr>
+                    <td class="conceito">Nacionalidade</td>
+                    <td>Alemão</td>
+                </tr>
+                <tr>
+                    <td class="conceito">Formação</td>
+                    <td>Filósofo, economista político e revolucionário</td>
+                </tr>
+                <tr>
+                    <td class="conceito">Principal Obra</td>
+                    <td>"O Capital" (1867) - análise crítica do capitalismo</td>
+                </tr>
+                <tr>
+                    <td class="conceito">Parceiro</td>
+                    <td>Friedrich Engels - colaborador intelectual</td>
+                </tr>
+            </table>
+
+            <h2>2. CONCEITOS FUNDAMENTAIS</h2>
+            <table>
+                <tr>
+                    <th>Conceito</th>
+                    <th>Definição</th>
+                    <th>Exemplo Prático</th>
+                </tr>
+                <tr>
+                    <td class="conceito">Materialismo Histórico</td>
+                    <td>A história é movida por conflitos materiais e econômicos</td>
+                    <td>Luta por controle de terras, fábricas e recursos</td>
+                </tr>
+                <tr>
+                    <td class="conceito">Classes Sociais</td>
+                    <td>Grupos definidos pela relação com os meios de produção</td>
+                    <td>Burguesia (dona) x Proletariado (trabalha)</td>
+                </tr>
+                <tr>
+                    <td class="conceito">Burguesia</td>
+                    <td>Classe dominante que detém os meios de produção</td>
+                    <td>Empresários, acionistas, donos de capital</td>
+                </tr>
+                <tr>
+                    <td class="conceito">Proletariado</td>
+                    <td>Classe trabalhadora que vende sua força de trabalho</td>
+                    <td>Operários, funcionários assalariados</td>
+                </tr>
+                <tr>
+                    <td class="conceito">Mais-Valia</td>
+                    <td>Valor não pago do trabalho - fonte do lucro capitalista</td>
+                    <td>Trabalhador produz R$100, recebe R$20 → R$80 é mais-valia</td>
+                </tr>
+                <tr>
+                    <td class="conceito">Alienação</td>
+                    <td>Trabalhador se torna estranho ao produto do seu trabalho</td>
+                    <td>Operário não vê significado no que produz</td>
+                </tr>
+                <tr>
+                    <td class="conceito">Ideologia</td>
+                    <td>Conjunto de ideias que mascara a realidade social</td>
+                    <td>"Todos podem ficar ricos se trabalharem duro"</td>
+                </tr>
+                <tr>
+                    <td class="conceito">Consciência de Classe</td>
+                    <td>Compreensão da exploração e poder coletivo</td>
+                    <td>Trabalhadores se unem por interesses comuns</td>
+                </tr>
+            </table>
+
+            <h2>3. CRÍTICA AO CAPITALISMO</h2>
+            <table>
+                <tr>
+                    <th>Problema</th>
+                    <th>Descrição</th>
+                    <th>Consequência</th>
+                </tr>
+                <tr>
+                    <td class="conceito">Exploração</td>
+                    <td>Extração da mais-valia do trabalhador</td>
+                    <td>Concentração de riqueza</td>
+                </tr>
+                <tr>
+                    <td class="conceito">Alienação</td>
+                    <td>Trabalho perde seu sentido humano</td>
+                    <td>Frustração e desumanização</td>
+                </tr>
+                <tr>
+                    <td class="conceito">Contradições</td>
+                    <td>Sistema gera riqueza e miséria simultaneamente</td>
+                    <td>Crises econômicas recorrentes</td>
+                </tr>
+                <tr>
+                    <td class="conceito">Luta de Classes</td>
+                    <td>Conflito permanente entre burguesia e proletariado</td>
+                    <td>Tensão social constante</td>
+                </tr>
+            </table>
+
+            <div class="dica">
+                <h3>💡 DICAS PARA A AULA</h3>
+                <p><strong>Contextualize:</strong> Mostre imagens da Revolução Industrial para entender o contexto histórico.</p>
+                <p><strong>Atualize:</strong> Use exemplos atuais como Uber, iFood para discutir alienação e mais-valia hoje.</p>
+                <p><strong>Debata:</strong> "O trabalho na sociedade atual é realizador ou apenas meio de sobrevivência?"</p>
             </div>
 
-            <!-- Questão 2 -->
-            <div class="question-card" id="question2">
-                <div class="question-number">Questão 2 de 5</div>
-                <h2>Segundo Marx, qual é o "motor da história", ou seja, a força que impulsiona as transformações sociais?</h2>
-                <div class="options">
-                    <div class="option" onclick="selectOption(this, 'a')">A) As grandes ideias dos filósofos</div>
-                    <div class="option" onclick="selectOption(this, 'b')">B) O desenvolvimento tecnológico</div>
-                    <div class="option" onclick="selectOption(this, 'c')">C) A luta de classes</div>
-                    <div class="option" onclick="selectOption(this, 'd')">D) A vontade divina</div>
-                </div>
-                <div class="navigation">
-                    <button class="btn btn-secondary" onclick="prevQuestion(2)">← Anterior</button>
-                    <button class="btn" onclick="nextQuestion(2)">Próxima →</button>
-                </div>
-            </div>
+            <!-- SEÇÃO 2: QUIZ -->
+            <div class="quiz-section">
+                <h2>🧠 QUIZ: TESTE SEU CONHECIMENTO</h2>
+                <p>Responda as 5 perguntas abaixo sobre a teoria marxista e clique no botão para ver as explicações detalhadas.</p>
 
-            <!-- Questão 3 -->
-            <div class="question-card" id="question3">
-                <div class="question-number">Questão 3 de 5</div>
-                <h2>O que Marx entende por "alienação" do trabalhador no sistema capitalista?</h2>
-                <div class="options">
-                    <div class="option" onclick="selectOption(this, 'a')">A) O trabalhador se torna estranho ao produto do seu trabalho</div>
-                    <div class="option" onclick="selectOption(this, 'b')">B) O trabalhador recebe salários muito baixos</div>
-                    <div class="option" onclick="selectOption(this, 'c')">C) O trabalhador é explorado pelo patrão</div>
-                    <div class="option" onclick="selectOption(this, 'd')">D) O trabalhador não tem consciência de classe</div>
+                <!-- Questão 1 -->
+                <div class="question-card">
+                    <h3>Questão 1: Qual é o conceito marxista que descreve o valor não pago do trabalho do trabalhador, que é a fonte do lucro capitalista?</h3>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 1, 'a')">A) Alienação</div>
+                        <div class="option" onclick="selectOption(this, 1, 'b')">B) Mais-Valia</div>
+                        <div class="option" onclick="selectOption(this, 1, 'c')">C) Ideologia</div>
+                        <div class="option" onclick="selectOption(this, 1, 'd')">D) Materialismo Histórico</div>
+                    </div>
                 </div>
-                <div class="navigation">
-                    <button class="btn btn-secondary" onclick="prevQuestion(3)">← Anterior</button>
-                    <button class="btn" onclick="nextQuestion(3)">Próxima →</button>
-                </div>
-            </div>
 
-            <!-- Questão 4 -->
-            <div class="question-card" id="question4">
-                <div class="question-number">Questão 4 de 5</div>
-                <h2>Qual é a relação fundamental que define as classes sociais no pensamento marxista?</h2>
-                <div class="options">
-                    <div class="option" onclick="selectOption(this, 'a')">A) O nível de renda e consumo</div>
-                    <div class="option" onclick="selectOption(this, 'b')">B) O grau de instrução educacional</div>
-                    <div class="option" onclick="selectOption(this, 'c')">C) A relação com os meios de produção</div>
-                    <div class="option" onclick="selectOption(this, 'd')">D) O prestígio social e profissional</div>
+                <!-- Questão 2 -->
+                <div class="question-card">
+                    <h3>Questão 2: Segundo Marx, qual é o "motor da história", ou seja, a força que impulsiona as transformações sociais?</h3>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 2, 'a')">A) As grandes ideias dos filósofos</div>
+                        <div class="option" onclick="selectOption(this, 2, 'b')">B) O desenvolvimento tecnológico</div>
+                        <div class="option" onclick="selectOption(this, 2, 'c')">C) A luta de classes</div>
+                        <div class="option" onclick="selectOption(this, 2, 'd')">D) A vontade divina</div>
+                    </div>
                 </div>
-                <div class="navigation">
-                    <button class="btn btn-secondary" onclick="prevQuestion(4)">← Anterior</button>
-                    <button class="btn" onclick="nextQuestion(4)">Próxima →</button>
-                </div>
-            </div>
 
-            <!-- Questão 5 -->
-            <div class="question-card" id="question5">
-                <div class="question-number">Questão 5 de 5</div>
-                <h2>O que Marx entende por "ideologia" no contexto da dominação capitalista?</h2>
-                <div class="options">
-                    <div class="option" onclick="selectOption(this, 'a')">A) Um sistema filosófico complexo</div>
-                    <div class="option" onclick="selectOption(this, 'b')">B) Um conjunto de ideias que mascara a realidade social</div>
-                    <div class="option" onclick="selectOption(this, 'c')">C) A ciência das ideias políticas</div>
-                    <div class="option" onclick="selectOption(this, 'd')">D) A propaganda do Estado burguês</div>
+                <!-- Questão 3 -->
+                <div class="question-card">
+                    <h3>Questão 3: O que Marx entende por "alienação" do trabalhador no sistema capitalista?</h3>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 3, 'a')">A) O trabalhador se torna estranho ao produto do seu trabalho</div>
+                        <div class="option" onclick="selectOption(this, 3, 'b')">B) O trabalhador recebe salários muito baixos</div>
+                        <div class="option" onclick="selectOption(this, 3, 'c')">C) O trabalhador é explorado pelo patrão</div>
+                        <div class="option" onclick="selectOption(this, 3, 'd')">D) O trabalhador não tem consciência de classe</div>
+                    </div>
                 </div>
-                <div class="navigation">
-                    <button class="btn btn-secondary" onclick="prevQuestion(5)">← Anterior</button>
-                    <button class="btn" onclick="showResults()">Ver Resultados</button>
-                </div>
-            </div>
 
-            <!-- Resultados -->
-            <div class="results-container" id="results">
-                <h2>🎉 Quiz Concluído!</h2>
-                <div class="score" id="finalScore">0/5</div>
-                <p id="resultMessage"></p>
-                
-                <div class="feedback">
-                    <h3>📚 Respostas e Explicações:</h3>
-                    <div id="explanations"></div>
+                <!-- Questão 4 -->
+                <div class="question-card">
+                    <h3>Questão 4: Qual é a relação fundamental que define as classes sociais no pensamento marxista?</h3>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 4, 'a')">A) O nível de renda e consumo</div>
+                        <div class="option" onclick="selectOption(this, 4, 'b')">B) O grau de instrução educacional</div>
+                        <div class="option" onclick="selectOption(this, 4, 'c')">C) A relação com os meios de produção</div>
+                        <div class="option" onclick="selectOption(this, 4, 'd')">D) O prestígio social e profissional</div>
+                    </div>
                 </div>
-                
-                <div style="margin-top: 2rem;">
-                    <button class="btn" onclick="restartQuiz()">Fazer Quiz Novamente</button>
-                    <a href="https://48cork.github.io/karl-marx/" class="btn btn-secondary" style="margin-left: 1rem;">
-                        Voltar ao Material
-                    </a>
+
+                <!-- Questão 5 -->
+                <div class="question-card">
+                    <h3>Questão 5: O que Marx entende por "ideologia" no contexto da dominação capitalista?</h3>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this, 5, 'a')">A) Um sistema filosófico complexo</div>
+                        <div class="option" onclick="selectOption(this, 5, 'b')">B) Um conjunto de ideias que mascara a realidade social</div>
+                        <div class="option" onclick="selectOption(this, 5, 'c')">C) A ciência das ideias políticas</div>
+                        <div class="option" onclick="selectOption(this, 5, 'd')">D) A propaganda do Estado burguês</div>
+                    </div>
                 </div>
+
+                <button class="btn" onclick="showExplanations()">📝 Ver Explicações das Respostas</button>
             </div>
         </div>
 
         <footer>
-            <p><strong>Quiz Didático - Introdução à Sociologia</strong></p>
+            <p><strong>Material Didático Completo - Introdução à Sociologia</strong></p>
             <p>Professor: [Seu Nome] | Turma: Calouros Universitários</p>
-            <p>Disponível em: https://48cork.github.io/karl-marx/</p>
         </footer>
+    </div>
+
+    <!-- MODAL PARA EXPLICAÇÕES -->
+    <div class="modal" id="explanationsModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <h2>📚 Explicações das Respostas</h2>
+            
+            <div class="score-display" id="scoreDisplay"></div>
+            
+            <div id="explanationsContent">
+                <!-- As explicações serão inseridas aqui via JavaScript -->
+            </div>
+            
+            <button class="btn" onclick="closeModal()" style="margin-top: 2rem;">Fechar</button>
+        </div>
     </div>
 
     <script>
@@ -366,125 +511,133 @@
 
         // Explicações detalhadas
         const explanations = {
-            1: "<strong>Resposta Correta: B) Mais-Valia</strong><br><br>A Mais-Valia é o conceito central da exploração capitalista. Representa a diferença entre o valor que o trabalhador produz e o salário que recebe. Exemplo: se um trabalhador produz R$100 em mercadorias mas recebe R$20 de salário, os R$80 restantes são a mais-valia, apropriada pelo capitalista como lucro.",
-            
-            2: "<strong>Resposta Correta: C) A luta de classes</strong><br><br>Para Marx, a história de todas as sociedades até hoje é a história da luta de classes. São os conflitos entre opressores e oprimidos (senhor/escravo, patrão/operário) que impulsionam as transformações sociais e históricas.",
-            
-            3: "<strong>Resposta Correta: A) O trabalhador se torna estranho ao produto do seu trabalho</strong><br><br>A alienação ocorre em quatro dimensões: 1) Do produto do trabalho, 2) Do ato de trabalhar, 3) Da natureza humana, 4) Dos outros trabalhadores. O trabalhador não se reconhece no que produz, tornando o trabalho uma atividade opressora.",
-            
-            4: "<strong>Resposta Correta: C) A relação com os meios de produção</strong><br><br>As classes sociais em Marx não são definidas por renda ou status, mas pela posição no sistema produtivo: quem é dono dos meios de produção (burguesia) e quem precisa vender sua força de trabalho (proletariado).",
-            
-            5: "<strong>Resposta Correta: B) Um conjunto de ideias que mascara a realidade social</strong><br><br>A ideologia funciona como 'falsa consciência' - um conjunto de valores e crenças que justifica e naturaliza a dominação, fazendo com que as relações de exploração pareçam 'naturais' e 'eternas'."
+            1: {
+                correct: "B) Mais-Valia",
+                explanation: "A Mais-Valia é o conceito central da exploração capitalista. Representa a diferença entre o valor que o trabalhador produz e o salário que recebe. Exemplo: se um trabalhador produz R$100 em mercadorias mas recebe R$20 de salário, os R$80 restantes são a mais-valia, apropriada pelo capitalista como lucro."
+            },
+            2: {
+                correct: "C) A luta de classes", 
+                explanation: "Para Marx, a história de todas as sociedades até hoje é a história da luta de classes. São os conflitos entre opressores e oprimidos (senhor/escravo, patrão/operário) que impulsionam as transformações sociais e históricas."
+            },
+            3: {
+                correct: "A) O trabalhador se torna estranho ao produto do seu trabalho",
+                explanation: "A alienação ocorre em quatro dimensões: 1) Do produto do trabalho, 2) Do ato de trabalhar, 3) Da natureza humana, 4) Dos outros trabalhadores. O trabalhador não se reconhece no que produz, tornando o trabalho uma atividade opressora."
+            },
+            4: {
+                correct: "C) A relação com os meios de produção",
+                explanation: "As classes sociais em Marx não são definidas por renda ou status, mas pela posição no sistema produtivo: quem é dono dos meios de produção (burguesia) e quem precisa vender sua força de trabalho (proletariado)."
+            },
+            5: {
+                correct: "B) Um conjunto de ideias que mascara a realidade social",
+                explanation: "A ideologia funciona como 'falsa consciência' - um conjunto de valores e crenças que justifica e naturaliza a dominação, fazendo com que as relações de exploração pareçam 'naturais' e 'eternas'."
+            }
         };
 
         let userAnswers = {};
-        let currentQuestion = 1;
 
-        function selectOption(optionElement, answer) {
+        function selectOption(optionElement, questionNum, answer) {
             // Remove seleção anterior nesta questão
-            const options = optionElement.parentElement.querySelectorAll('.option');
+            const questionCard = optionElement.closest('.question-card');
+            const options = questionCard.querySelectorAll('.option');
             options.forEach(opt => opt.classList.remove('selected'));
             
             // Seleciona nova opção
             optionElement.classList.add('selected');
-            userAnswers[currentQuestion] = answer;
+            userAnswers[questionNum] = answer;
         }
 
-        function nextQuestion(questionNum) {
-            if (!userAnswers[questionNum]) {
-                alert('Por favor, selecione uma resposta antes de continuar.');
-                return;
-            }
-
-            document.getElementById(`question${questionNum}`).classList.remove('active');
-            document.getElementById(`question${questionNum + 1}`).classList.add('active');
-            currentQuestion = questionNum + 1;
-            updateProgress();
-        }
-
-        function prevQuestion(questionNum) {
-            document.getElementById(`question${questionNum}`).classList.remove('active');
-            document.getElementById(`question${questionNum - 1}`).classList.add('active');
-            currentQuestion = questionNum - 1;
-            updateProgress();
-        }
-
-        function updateProgress() {
-            const progress = (currentQuestion / 5) * 100;
-            document.getElementById('progress').style.width = `${progress}%`;
-        }
-
-        function showResults() {
-            if (!userAnswers[5]) {
-                alert('Por favor, selecione uma resposta antes de ver os resultados.');
+        function showExplanations() {
+            // Verifica se todas as questões foram respondidas
+            const totalQuestions = 5;
+            const answeredQuestions = Object.keys(userAnswers).length;
+            
+            if (answeredQuestions < totalQuestions) {
+                alert(`Por favor, responda todas as ${totalQuestions} questões antes de ver as explicações. Faltam ${totalQuestions - answeredQuestions} questão(ões).`);
                 return;
             }
 
             // Calcula pontuação
             let score = 0;
-            for (let i = 1; i <= 5; i++) {
+            for (let i = 1; i <= totalQuestions; i++) {
                 if (userAnswers[i] === correctAnswers[i]) {
                     score++;
                 }
             }
 
-            // Mostra resultados
-            document.getElementById('question5').classList.remove('active');
-            document.getElementById('results').style.display = 'block';
-            document.getElementById('finalScore').textContent = `${score}/5`;
+            // Atualiza display do score
+            document.getElementById('scoreDisplay').textContent = `Pontuação: ${score}/${totalQuestions}`;
 
-            // Mensagem personalizada
-            let message = '';
-            if (score === 5) {
-                message = '🎊 Excelente! Domínio completo da teoria marxista!';
-            } else if (score >= 3) {
-                message = '👍 Bom trabalho! Compreensão sólida dos conceitos fundamentais.';
-            } else {
-                message = '💭 Continue estudando! Revise os conceitos principais.';
-            }
-            document.getElementById('resultMessage').textContent = message;
-
-            // Mostra explicações
+            // Gera conteúdo das explicações
             let explanationsHTML = '';
-            for (let i = 1; i <= 5; i++) {
+            for (let i = 1; i <= totalQuestions; i++) {
                 const userAnswer = userAnswers[i];
                 const isCorrect = userAnswer === correctAnswers[i];
-                const answerClass = isCorrect ? 'correct' : 'incorrect';
+                const explanationData = explanations[i];
                 
                 explanationsHTML += `
-                    <div style="margin-bottom: 1.5rem; padding: 1rem; background: ${isCorrect ? '#e8f5e8' : '#ffeaea'}; border-radius: 5px; border-left: 4px solid ${isCorrect ? '#28a745' : '#dc3545'};">
-                        <strong>Questão ${i}:</strong> ${isCorrect ? '✅ Correta' : '❌ Incorreta'}
-                        ${explanations[i]}
+                    <div class="question-card" style="background: ${isCorrect ? '#e8f5e8' : '#ffeaea'}; border-left: 4px solid ${isCorrect ? '#28a745' : '#dc3545'};">
+                        <h3>Questão ${i}: ${isCorrect ? '✅ Correta' : '❌ Incorreta'}</h3>
+                        <p><strong>Sua resposta:</strong> ${getAnswerText(i, userAnswer)}</p>
+                        <p><strong>Resposta correta:</strong> ${explanationData.correct}</p>
+                        <div class="dica" style="margin: 1rem 0; background: rgba(255,255,255,0.7);">
+                            <strong>Explicação:</strong> ${explanationData.explanation}
+                        </div>
                     </div>
                 `;
             }
-            document.getElementById('explanations').innerHTML = explanationsHTML;
+
+            document.getElementById('explanationsContent').innerHTML = explanationsHTML;
+            document.getElementById('explanationsModal').style.display = 'block';
         }
 
-        function restartQuiz() {
-            userAnswers = {};
-            currentQuestion = 1;
+        function getAnswerText(questionNum, answer) {
+            const questions = {
+                1: {
+                    'a': 'A) Alienação',
+                    'b': 'B) Mais-Valia', 
+                    'c': 'C) Ideologia',
+                    'd': 'D) Materialismo Histórico'
+                },
+                2: {
+                    'a': 'A) As grandes ideias dos filósofos',
+                    'b': 'B) O desenvolvimento tecnológico',
+                    'c': 'C) A luta de classes',
+                    'd': 'D) A vontade divina'
+                },
+                3: {
+                    'a': 'A) O trabalhador se torna estranho ao produto do seu trabalho',
+                    'b': 'B) O trabalhador recebe salários muito baixos',
+                    'c': 'C) O trabalhador é explorado pelo patrão',
+                    'd': 'D) O trabalhador não tem consciência de classe'
+                },
+                4: {
+                    'a': 'A) O nível de renda e consumo',
+                    'b': 'B) O grau de instrução educacional',
+                    'c': 'C) A relação com os meios de produção',
+                    'd': 'D) O prestígio social e profissional'
+                },
+                5: {
+                    'a': 'A) Um sistema filosófico complexo',
+                    'b': 'B) Um conjunto de ideias que mascara a realidade social',
+                    'c': 'C) A ciência das ideias políticas',
+                    'd': 'D) A propaganda do Estado burguês'
+                }
+            };
             
-            // Reseta seleções
-            document.querySelectorAll('.option').forEach(opt => {
-                opt.classList.remove('selected');
-            });
-            
-            // Mostra primeira questão
-            document.querySelectorAll('.question-card').forEach(card => {
-                card.classList.remove('active');
-            });
-            document.getElementById('question1').classList.add('active');
-            
-            // Esconde resultados
-            document.getElementById('results').style.display = 'none';
-            
-            // Reseta progresso
-            updateProgress();
+            return questions[questionNum][answer] || 'Não respondida';
         }
 
-        // Inicializa progress bar
-        updateProgress();
+        function closeModal() {
+            document.getElementById('explanationsModal').style.display = 'none';
+        }
+
+        // Fechar modal clicando fora do conteúdo
+        window.onclick = function(event) {
+            const modal = document.getElementById('explanationsModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
     </script>
 </body>
 </html>
